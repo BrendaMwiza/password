@@ -69,7 +69,17 @@ class TestIngufuri(unittest.TestCase):
         found_user = Ingufuri.find_by_email("muka@gmail.com")
 
         self.assertEqual(found_user.email,test_account.email)
-        
+
+    def test_account_exists(self):
+        '''
+        this method checks if the user account exists by returning a boolean.
+        '''
+        self.new_account.save_account()
+        test_account = Ingufuri("Muka","muka@gmail.com","12345")
+        test_account.save_account()
+        account_exists = Ingufuri.account_exists("muka@gmail.com")
+
+        self.assertTrue(account_exists)
 
 
 if __name__ == '__main__':

@@ -38,5 +38,14 @@ class Ingufuri:
             if account.email == email:
                 return account
 
+    @classmethod
+    def account_exists(cls,email):
+        '''
+        this method checks if the user exists from the list.
+        '''
+        for account in cls.user_info:
+            if account.email == email:
+                return True
 
+        return False
     
