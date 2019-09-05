@@ -48,6 +48,16 @@ class TestIngufuri(unittest.TestCase):
         test_account.save_account()
         self.assertEqual(len(Ingufuri.user_info),2)
 
+    def test_delete_account(self):
+        '''
+        this method tests if we can remove an account from the list.
+        '''
+        self.new_account.save_account()
+        test_account = Ingufuri("Muka","muka@gmail.com","12345")
+        test_account.save_account()
+        self.new_account.delete_account() # for deleting a user object
+        self.assertEqual(len(Ingufuri.user_info),1)
+
 
 if __name__ == '__main__':
         unittest.main()

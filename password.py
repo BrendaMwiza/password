@@ -23,5 +23,10 @@ class Ingufuri:
 
         Ingufuri.user_info.append(self)
 
-    pass
+    def delete_account(self):
+        '''
+        this method deletes a saved user account from the list
+        '''
+        Ingufuri.user_info.remove(self)
+        
     
