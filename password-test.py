@@ -33,18 +33,21 @@ class TestIngufuri(unittest.TestCase):
         self.new_account.save_account()
         self.assertEqual(len(Ingufuri.user_info),1)
 
-    # def manager(self):
-    #     '''
-    #     method that refleshes after every test case has run.
-    #     '''
-    #     Ingufuri.user_info = []
+    def tearDown(self):
+        '''
+        method that refleshes after every test case has run.
+        '''
+        Ingufuri.user_info = []
 
-    # def test_save_many_accounts(self):
-    #     '''
-    #     this method checks if many accounts can be saved.
-    #     '''
-    #     self.new_account.save_account()
-        
+    def test_save_many_accounts(self):
+        '''
+        this method checks if many accounts can be saved.
+        '''
+        self.new_account.save_account()
+        test_account = Ingufuri("Muka","muka@gmail.com","12345")
+        test_account.save_account()
+        self.assertEqual(len(Ingufuri.user_info),2)
+
 
 if __name__ == '__main__':
         unittest.main()
