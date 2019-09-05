@@ -58,6 +58,19 @@ class TestIngufuri(unittest.TestCase):
         self.new_account.delete_account() # for deleting a user object
         self.assertEqual(len(Ingufuri.user_info),1)
 
+    def test_find_user_by_email(self):
+        '''
+        this method is to find the user account by email and display information.
+        '''
+        self.new_account.save_account()
+        test_account = Ingufuri("Muka","muka@gmail.com","12345")
+        test_account.save_account()
+
+        found_user = Ingufuri.find_by_email("muka@gmail.com")
+
+        self.assertEqual(found_user.email,test_account.email)
+        
+
 
 if __name__ == '__main__':
         unittest.main()

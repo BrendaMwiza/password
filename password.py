@@ -28,5 +28,15 @@ class Ingufuri:
         this method deletes a saved user account from the list
         '''
         Ingufuri.user_info.remove(self)
-        
+
+    @classmethod
+    def find_by_email(cls,email):
+        '''
+        this method enters an email and returns the user information.
+        '''
+        for account in cls.user_info:
+            if account.email == email:
+                return account
+
+
     
