@@ -2,19 +2,26 @@ class Ingufuri:
     '''
     class that will generate new user-names,emails and passwords
     '''
+
     def __init__(self,full_name,email,password):
 
-        """
+        '''
         This _init_ method will help us define our object properties.
-
-        arge:
-            full_name: New user full name.
-            email: New user amail address.
-            password: New user password.
-        """
+        '''
 
         self.full_name = full_name
         self.email = email
-        self.pasword = pasword
+        self.password = password
 
-        
+    user_info = [] #an array that will contain the users informations
+
+    def save_account(self):
+
+        '''
+        save_user method to save user objects into user_info
+        '''
+
+        Ingufuri.user_info.append(self)
+
+    pass
+    
