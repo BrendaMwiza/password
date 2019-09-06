@@ -50,8 +50,8 @@ class Ingufuri:
 
         return False
     
-    @classmethod
-    def copy_email(cls,email):
-        found_user = cls.find_by_email(email)
-        pyperclip.copy(found_user.email)
-        # print(email)
+    # @classmethod
+    # def copy_email(cls,email):
+    #     found_user = cls.find_by_email(email)
+    #     pyperclip.copy(found_user.email)
+    #     # print(email)

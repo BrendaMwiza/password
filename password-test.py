@@ -178,7 +178,7 @@ class TestStore(unittest.TestCase):
         method that returns a list of all accounts saved
         '''
 
-        self.assertEqual(Store.display_contes(),Store.account_info)
+        self.assertEqual(Store.display_contes(),Store.accounts_info)
 
 if __name__ == '__main__':
         unittest.main()
