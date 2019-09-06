@@ -30,14 +30,14 @@ class Store:
         '''
         Store.account_info.remove(self)
 
-    # @classmethod
-    # def findinga_by_user_name(cls,user_name):
-    #     '''
-    #     this method enters a user_name and returns the account information.
-    #     '''
-    #     for contes in cls.account_info:
-    #         if contes.user_name == user_name:
-    #             return contes
+    @classmethod
+    def findinga_by_user_name(cls,user_name):
+        '''
+        this method enters a user_name and returns the account information.
+        '''
+        for contes in cls.account_info:
+            if contes.user_name == user_name:
+                return contes
 
     # @classmethod
     # def conte_existing(cls,user_name):

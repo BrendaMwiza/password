@@ -150,7 +150,17 @@ class TestStore(unittest.TestCase):
         self.new_conte.deletinga_conte() # for deleting an account object
         self.assertEqual(len(Store.account_info),1)
 
-    
+    def test_findinga_by_user_name(self):
+        '''
+        this method is to find the account by user_name and display information.
+        '''
+        self.new_conte.savinga_contes()
+        test_conte = Store("Instagram","Gasaro Wandah","nyira@gmail.com","ziraje")
+        test_conte.savinga_contes()
+
+        found_conte = Store.findinga_by_user_name("Gasaro Wandah")
+
+        self.assertEqual(found_conte.user_name,test_conte.user_name)
 
 if __name__ == '__main__':
         unittest.main()
