@@ -1,3 +1,4 @@
+import pyperclip
 class Ingufuri:
     '''
     class that will generate new user-names,emails and passwords
@@ -49,3 +50,8 @@ class Ingufuri:
 
         return False
     
+    @classmethod
+    def copy_email(cls,email):
+        found_user = cls.find_by_email(email)
+        pyperclip.copy(found_user.email)
+        # print(email)

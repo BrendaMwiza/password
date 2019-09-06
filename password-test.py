@@ -1,3 +1,4 @@
+import pyperclip
 import unittest
 
 from password import Ingufuri # importing the Ingufuri class
@@ -81,6 +82,18 @@ class TestIngufuri(unittest.TestCase):
 
         self.assertTrue(account_exists)
 
+    def test_copy_email(self):
+        '''
+        this test confirms that an email is being copied from an account.
+        '''
+        self.new_account.save_account()
+        Ingufuri.copy_email("brenda@ms.com")
+        self.assertEqual(self.new_account.email,pyperclip.paste())
+
+#------------------------------------------------------------------------------------------------------------------------------------
+    # testing credentials in Store class
+
+    
 
 if __name__ == '__main__':
         unittest.main()

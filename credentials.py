@@ -1,0 +1,57 @@
+import pyperclip
+class Store:
+    '''
+    class that will generate accounts that a user has stored.
+    '''
+
+    def __init__(self,user_name,email,password):
+
+        '''
+        This _init_ method will help us define our object properties.
+        '''
+
+        self.user_name = user_name
+        self.email = email
+        self.password = password
+
+    user_info = [] #an array that will contain the users informations
+
+    def save_account(self):
+
+        '''
+        save_user method to save user objects into user_info
+        '''
+
+        Ingufuri.user_info.append(self)
+
+    def delete_account(self):
+        '''
+        this method deletes a saved user account from the list
+        '''
+        Ingufuri.user_info.remove(self)
+
+    @classmethod
+    def find_by_email(cls,email):
+        '''
+        this method enters an email and returns the user information.
+        '''
+        for account in cls.user_info:
+            if account.email == email:
+                return account
+
+    @classmethod
+    def account_exists(cls,email):
+        '''
+        this method checks if the user exists from the list.
+        '''
+        for account in cls.user_info:
+            if account.email == email:
+                return True
+
+        return False
+    
+    @classmethod
+    def copy_email(cls,email):
+        found_user = cls.find_by_email(email)
+        pyperclip.copy(found_user.email)
+        # print(email)
