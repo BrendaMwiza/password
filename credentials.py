@@ -39,16 +39,16 @@ class Store:
             if contes.user_name == user_name:
                 return contes
 
-    # @classmethod
-    # def conte_existing(cls,user_name):
-    #     '''
-    #     this method checks if the account exists from the list.
-    #     '''
-    #     for contes in cls.account_info:
-    #         if contes.user_name == user_name:
-    #             return True
+    @classmethod
+    def conte_existing(cls,user_name):
+        '''
+        this method checks if the account exists from the list.
+        '''
+        for contes in cls.account_info:
+            if contes.user_name == user_name:
+                return True
 
-    #     return False
+        return False
     
     # @classmethod
     # def copy_email(cls,email):

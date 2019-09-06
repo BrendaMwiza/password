@@ -162,5 +162,16 @@ class TestStore(unittest.TestCase):
 
         self.assertEqual(found_conte.user_name,test_conte.user_name)
 
+    def test_conte_existing(self):
+        '''
+        this method checks if the account exists by returning a boolean.
+        '''
+        self.new_conte.savinga_contes()
+        test_conte = Store("Instagram","Gasaro Wandah","nyira@gmail.com","ziraje")
+        test_conte.savinga_contes()
+        conte_existing = Store.conte_existing("Gasaro Wandah")
+
+        self.assertTrue(conte_existing)
+
 if __name__ == '__main__':
         unittest.main()
