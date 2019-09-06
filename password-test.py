@@ -93,7 +93,31 @@ class TestIngufuri(unittest.TestCase):
 #------------------------------------------------------------------------------------------------------------------------------------
     # testing credentials in Store class
 
-    
+from credentials import Store # importing the Store class from credentials
+
+class TestStore(unittest.TestCase):
+
+    '''
+    This class defines test cases for the Store class behaviours
+    '''
+
+    def setUp(self):
+        '''
+        this method is for running before each test case.
+        '''
+
+        self.new_conte = Store("Facebook","Black Mwiza","black@ms.com","12345") 
+
+    def test_init(self):
+        '''
+        this is to test if the object is properly initialised.
+        '''
+
+        self.assertEqual(self.new_conte.account,"Facebook")
+        self.assertEqual(self.new_conte.user_name,"Black Mwiza")
+        self.assertEqual(self.new_conte.email,"black@ms.com")
+        self.assertEqual(self.new_conte.password,"12345")
+        
 
 if __name__ == '__main__':
         unittest.main()

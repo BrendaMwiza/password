@@ -4,54 +4,54 @@ class Store:
     class that will generate accounts that a user has stored.
     '''
 
-    def __init__(self,user_name,email,password):
+    def __init__(self,account,user_name,email,password):
 
         '''
         This _init_ method will help us define our object properties.
         '''
-
+        self.account = account
         self.user_name = user_name
         self.email = email
         self.password = password
 
-    user_info = [] #an array that will contain the users informations
+    account_info = [] #an array that will contain the users informations
 
-    def save_account(self):
+    # def savinga_contes(self):
 
-        '''
-        save_user method to save user objects into user_info
-        '''
+    #     '''
+    #     saving_contes method to save user objects into account_info
+    #     '''
 
-        Ingufuri.user_info.append(self)
+    #     Store.account_info.append(self)
 
-    def delete_account(self):
-        '''
-        this method deletes a saved user account from the list
-        '''
-        Ingufuri.user_info.remove(self)
+    # def deletinga_conte(self):
+    #     '''
+    #     this method deletes a saved account from the list
+    #     '''
+    #     Store.account_info.remove(self)
 
-    @classmethod
-    def find_by_email(cls,email):
-        '''
-        this method enters an email and returns the user information.
-        '''
-        for account in cls.user_info:
-            if account.email == email:
-                return account
+    # @classmethod
+    # def findinga_by_user_name(cls,user_name):
+    #     '''
+    #     this method enters a user_name and returns the account information.
+    #     '''
+    #     for contes in cls.account_info:
+    #         if contes.user_name == user_name:
+    #             return contes
 
-    @classmethod
-    def account_exists(cls,email):
-        '''
-        this method checks if the user exists from the list.
-        '''
-        for account in cls.user_info:
-            if account.email == email:
-                return True
+    # @classmethod
+    # def conte_existing(cls,user_name):
+    #     '''
+    #     this method checks if the account exists from the list.
+    #     '''
+    #     for contes in cls.account_info:
+    #         if contes.user_name == user_name:
+    #             return True
 
-        return False
+    #     return False
     
-    @classmethod
-    def copy_email(cls,email):
-        found_user = cls.find_by_email(email)
-        pyperclip.copy(found_user.email)
-        # print(email)
+    # @classmethod
+    # def copy_email(cls,email):
+    #     found_user = cls.find_by_email(email)
+    #     pyperclip.copy(found_user.email)
+    
