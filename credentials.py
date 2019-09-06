@@ -24,11 +24,11 @@ class Store:
 
         Store.account_info.append(self)
 
-    # def deletinga_conte(self):
-    #     '''
-    #     this method deletes a saved account from the list
-    #     '''
-    #     Store.account_info.remove(self)
+    def deletinga_conte(self):
+        '''
+        this method deletes a saved account from the list
+        '''
+        Store.account_info.remove(self)
 
     # @classmethod
     # def findinga_by_user_name(cls,user_name):

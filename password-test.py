@@ -125,5 +125,32 @@ class TestStore(unittest.TestCase):
         self.new_conte.savinga_contes()
         self.assertEqual(len(Store.account_info),1)
 
+    def tearDown(self):
+        '''
+        method that refleshes after every test case has run.
+        '''
+        Store.account_info = []
+
+    def test_savinga_many_contes(self):
+        '''
+        this method checks if many accounts can be saved.
+        '''
+        self.new_conte.savinga_contes()
+        test_conte = Store("Instagram","Gasaro Wandah","nyira@gmail.com","ziraje")
+        test_conte.savinga_contes()
+        self.assertEqual(len(Store.account_info),2)
+
+    def test_deletinga_conte(self):
+        '''
+        this method tests if we can remove an account from the list.
+        '''
+        self.new_conte.savinga_contes()
+        test_conte = Store("Instagram","Gasaro Wandah","nyira@gmail.com","ziraje")
+        test_conte.savinga_contes()
+        self.new_conte.deletinga_conte() # for deleting an account object
+        self.assertEqual(len(Store.account_info),1)
+
+    
+
 if __name__ == '__main__':
         unittest.main()
