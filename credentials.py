@@ -16,13 +16,13 @@ class Store:
 
     account_info = [] #an array that will contain the users informations
 
-    # def savinga_contes(self):
+    def savinga_contes(self):
 
-    #     '''
-    #     saving_contes method to save user objects into account_info
-    #     '''
+        '''
+        saving_contes method to save user objects into account_info
+        '''
 
-    #     Store.account_info.append(self)
+        Store.account_info.append(self)
 
     # def deletinga_conte(self):
     #     '''

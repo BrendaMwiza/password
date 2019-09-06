@@ -118,6 +118,12 @@ class TestStore(unittest.TestCase):
         self.assertEqual(self.new_conte.email,"black@ms.com")
         self.assertEqual(self.new_conte.password,"12345")
         
+    def test_savinga_contes(self):
+        '''
+        this test case is for testing if the account_info object is added. 
+        '''
+        self.new_conte.savinga_contes()
+        self.assertEqual(len(Store.account_info),1)
 
 if __name__ == '__main__':
         unittest.main()
