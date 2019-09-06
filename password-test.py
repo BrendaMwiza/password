@@ -173,5 +173,12 @@ class TestStore(unittest.TestCase):
 
         self.assertTrue(conte_existing)
 
+    def test_display_all_accounts(self):
+        '''
+        method that returns a list of all accounts saved
+        '''
+
+        self.assertEqual(Store.display_contes(),Store.account_info)
+
 if __name__ == '__main__':
         unittest.main()

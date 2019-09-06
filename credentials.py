@@ -49,6 +49,13 @@ class Store:
                 return True
 
         return False
+
+    @classmethod
+    def display_contes(cls):
+        '''
+        method that returns the list of accounts.
+        '''
+        return cls.account_info
     
     # @classmethod
     # def copy_email(cls,email):
