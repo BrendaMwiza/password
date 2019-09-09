@@ -49,9 +49,15 @@ class Ingufuri:
                 return True
 
         return False
+
+    @classmethod
+    def login(cls,emails,modepass):
+        for users in cls.user_info:
+            if users.email == emails and users.password == modepass:
+                return True
+        return False
     
-    # @classmethod
-    # def copy_email(cls,email):
-    #     found_user = cls.find_by_email(email)
-    #     pyperclip.copy(found_user.email)
-    #     # print(email)
+    @classmethod
+    def copy_email(cls,email):
+        found_user = cls.find_by_email(email)
+        pyperclip.copy(found_user.email)

@@ -56,6 +56,8 @@ class Store:
         method that returns the list of accounts.
         '''
         return cls.account_info
+
+        
     
     # @classmethod
     # def copy_email(cls,email):

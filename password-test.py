@@ -90,6 +90,17 @@ class TestIngufuri(unittest.TestCase):
         Ingufuri.copy_email("brenda@ms.com")
         self.assertEqual(self.new_account.email,pyperclip.paste())
 
+    def test_login(self):
+        '''
+        test to confirm the login function
+        '''
+        self.new_account.save_account()
+        test_account = Ingufuri("Muka","muka@gmail.com","12345")
+        test_account.save_account()
+
+        isIn = Ingufuri.login("brenda@ms.com","123456789")
+        self.assertTrue(isIn)
+
 #------------------------------------------------------------------------------------------------------------------------------------
     # testing credentials in Store class
 
@@ -178,7 +189,10 @@ class TestStore(unittest.TestCase):
         method that returns a list of all accounts saved
         '''
 
-        self.assertEqual(Store.display_contes(),Store.accounts_info)
+        self.assertEqual(Store.display_contes(),Store.account_info)
+
+    
+        
 
 if __name__ == '__main__':
         unittest.main()
