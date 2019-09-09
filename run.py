@@ -52,7 +52,7 @@ def delete_cre(conte):
     '''
     this will be used to delete credential.
     '''
-    conte.delete_cre()
+    conte.deletinga_conte()
 
 def find_cre(account):
     '''
@@ -146,10 +146,10 @@ def main():
             print('Enter credential you want to delete')
             see = input()
             if find_existing_cre(see):
-                conte.delete_cre()
+                conte.deletinga_conte()
                 print("credential deleted")
             else:
-                print("It does not exist")
+                print("It does not")
 
 
 if __name__ == '__main__':
