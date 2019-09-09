@@ -57,17 +57,36 @@ def main():
 
             save_account(create_account(fullName,email,password)) #created and saved new account
             print('\n')
-            print(f"New account {email} ceated")
+            print(f"New account {email} successfully ceated")
             print('\n')
 
         elif short == 'lg':
             print("Enter your email")
-
             shakisha = input()
+            print('.' * 30)
+
+            print ("Enter passord")
+            shakisha = input()
+            print('.' * 30)
+
             if find_existing_user(shakisha):
                 search = find_user(shakisha)
 
-                print(f"")
+        break
+
+    while True:
+        print("use the following short codes: ccr - create credential, del - delete credential")
+
+        short = input().lower()
+        if short == 'ccr':
+            user_name = input("Username: ")
+            password = input("Password: ")
+            email = input("Email: ")
+            account = input("account name: ")
+            print('.' * 60)
+
+        print("credential successfully created.")
+        print('.' * 60)
 
 
 if __name__ == '__main__':
