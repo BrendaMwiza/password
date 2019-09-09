@@ -10,11 +10,11 @@ def create_account(funame,email,password):
     new_user = Ingufuri(funame,email,password)
     return new_user
 
-def save_user(user):
+def save_account(user):
     '''
     this will save the user account
     '''
-    user.save_user()
+    user.save_account()
 
 def delete_user(user):
     '''
@@ -68,6 +68,10 @@ def main():
                 search = find_user(shakisha)
 
                 print(f"")
+
+
+if __name__ == '__main__':
+        main()
 
 
 
